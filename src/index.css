@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'),
+    url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2)
+      format('woff2');
+}
+* {
+  font-family: 'Product Sans';
+}
+.body {
+  @apply p-0 bg-zinc-50;
+}
+/* ============================= UI Layout =========================== */
+.main-header {
+  @apply fixed top-0 py-1 flex flex-row justify-between items-center w-full bg-zinc-50 z-10;
+}
+.logo {
+  @apply text-xl text-zinc-700 dark:text-zinc-200 px-6;
+}
+/* =============================== Editor ======================= */
+#editorjs-container > div:first-child {
+  @apply hidden;
+}
+#editorjs-container {
+  @apply p-0;
+}
+/* =============================== Home ====================== */
+.main-layout {
+  @apply h-auto w-full font-sans antialiased flex flex-row justify-center items-start bg-fixed;
+}
+.sidebar {
+  @apply fixed left-0 top-14 w-1/5 h-[90vh] overflow-y-auto hidden lg:block pt-14 bg-zinc-50;
+}
+.main {
+  @apply w-full lg:w-4/5;
+}
+.home-container {
+  @apply max-h-screen w-full overflow-y-auto flex flex-col pt-20;
+}
