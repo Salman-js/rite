@@ -10,16 +10,6 @@ type editorProps = {
 const Editor: React.FC<editorProps> = ({ data: initData }) => {
   const editor = new EditorJS({
     holder: 'editorjs-container',
-    inlineToolbar: [
-      'text',
-      'header',
-      'list',
-      'link',
-      'checklist',
-      'button',
-      'code',
-      'quote',
-    ],
     tools,
     onReady: () => {
       const undo = new Undo({
@@ -39,7 +29,12 @@ const Editor: React.FC<editorProps> = ({ data: initData }) => {
       nonce: 'black',
     },
   });
-  return <div id='editorjs-container'></div>;
+  return (
+    <div className='editor-container'>
+      <input type='text' className='note-title-input' placeholder='Title' />
+      <div id='editorjs-container'></div>
+    </div>
+  );
 };
 
 export default Editor;

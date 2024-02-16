@@ -1,6 +1,7 @@
 import { ROUTES } from '@/Router/constants';
 import { useLocation } from 'react-router-dom';
 import Header from './header.layout';
+import Sidebar from './Sidebar/sidebar.layout';
 
 type authUiBoundaryProps = {
   children: React.ReactNode;
@@ -15,11 +16,7 @@ const AuthUiBoundary: React.FC<authUiBoundaryProps> = ({ children }) => {
       {/* <Toaster /> */}
       {currentPathname.includes(ROUTES.AUTH) ? null : (
         <div className='sidebar'>
-          {/* {currentPathname.includes(ROUTES.SEARCH) ? (
-            <SearchSidebar />
-          ) : (
-            <Sidebar />
-          )} */}
+          <Sidebar />
         </div>
       )}
       {children}

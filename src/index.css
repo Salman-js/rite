@@ -1,4 +1,40 @@
 @tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl outline-none;
+  }
+  h1:active,
+  h1:focus,
+  h2:active,
+  h2:focus,
+  h3:active,
+  h3:focus,
+  h4:active,
+  h4:focus,
+  h5:active,
+  h5:focus,
+  h6:active,
+  h6:focus {
+    @apply outline-none;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
+  input {
+    @apply outline-none;
+  }
+  .ant-btn {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
 @tailwind components;
 @tailwind utilities;
 @font-face {
@@ -11,34 +47,51 @@
 }
 * {
   font-family: 'Product Sans';
+  box-sizing: border-box;
 }
 .body {
   @apply p-0 bg-zinc-50;
 }
+.border {
+  border-width: 1px;
+}
 /* ============================= UI Layout =========================== */
 .main-header {
-  @apply fixed top-0 py-1 flex flex-row justify-between items-center w-full bg-zinc-50 z-10;
+  @apply fixed top-0 py-6 flex flex-row justify-between items-center w-full bg-zinc-50 z-10;
 }
 .logo {
   @apply text-xl text-zinc-700 dark:text-zinc-200 px-6;
-}
-/* =============================== Editor ======================= */
-#editorjs-container > div:first-child {
-  @apply hidden;
-}
-#editorjs-container {
-  @apply p-0;
 }
 /* =============================== Home ====================== */
 .main-layout {
   @apply h-auto w-full font-sans antialiased flex flex-row justify-center items-start bg-fixed;
 }
 .sidebar {
-  @apply fixed left-0 top-14 w-1/5 h-[90vh] overflow-y-auto hidden lg:block pt-14 bg-zinc-50;
+  @apply fixed left-0 top-14 w-1/5 h-[100vh] overflow-y-auto hidden lg:block pt-14 bg-zinc-50 box-border px-4;
+}
+.note-item {
+  @apply w-full p-2 rounded-lg border border-slate-200 flex flex-row justify-between bg-white shadow-sm;
 }
 .main {
   @apply w-full lg:w-4/5;
 }
 .home-container {
-  @apply max-h-screen w-full overflow-y-auto flex flex-col pt-20;
+  @apply max-h-screen w-full overflow-y-auto flex flex-col pt-20 lg:pl-32 pl-0;
+}
+
+/* =============================== Editor ======================= */
+.editor-container {
+  @apply lg:px-20 px-4 pt-6;
+}
+.note-title-input {
+  @apply max-w-[90%] h-16 p-3 outline-none text-4xl lg:ml-10 border-none;
+}
+#editorjs-container > div:first-child {
+  @apply hidden;
+}
+#editorjs-container {
+  @apply p-0;
+}
+.ce-paragraph {
+  @apply outline-none;
 }
