@@ -16,12 +16,18 @@ import {
 } from '@dnd-kit/sortable';
 import { NoteItem } from './item.note';
 import { INote } from '@/Interface/Note/note.interface';
+import { PlusOutlined } from '@ant-design/icons';
 
 export function NotesContainer() {
   const [items, setItems] = useState<INote[]>([
     { id: 1, order: 1 },
     { id: 2, order: 2 },
     { id: 3, order: 3 },
+    { id: 4, order: 4 },
+    { id: 5, order: 5 },
+    { id: 6, order: 6 },
+    { id: 7, order: 7 },
+    { id: 8, order: 8 },
   ]);
 
   const sensors = useSensors(
@@ -44,20 +50,22 @@ export function NotesContainer() {
   );
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-    >
-      <SortableContext
-        items={items.map((item) => item.order)}
-        strategy={verticalListSortingStrategy}
+    <div className='w-full'>
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleDragEnd}
       >
-        {items.map((item) => (
-          <NoteItem key={item.order} note={item} />
-        ))}
-      </SortableContext>
-    </DndContext>
+        <SortableContext
+          items={items.map((item) => item.order)}
+          strategy={verticalListSortingStrategy}
+        >
+          {items.map((item) => (
+            <NoteItem key={item.order} note={item} />
+          ))}
+        </SortableContext>
+      </DndContext>
+    </div>
   );
 
   function handleDragEnd(event: DragEndEvent) {

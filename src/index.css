@@ -57,7 +57,7 @@
 }
 /* ============================= UI Layout =========================== */
 .main-header {
-  @apply fixed top-0 py-6 flex flex-row justify-between items-center w-full bg-zinc-50 z-10;
+  @apply fixed top-0 py-6 flex flex-row justify-between items-center w-full bg-slate-50 z-10;
 }
 .logo {
   @apply text-xl text-zinc-700 dark:text-zinc-200 px-6;
@@ -67,10 +67,13 @@
   @apply h-auto w-full font-sans antialiased flex flex-row justify-center items-start bg-fixed;
 }
 .sidebar {
-  @apply fixed left-0 top-14 w-1/5 h-[100vh] overflow-y-auto hidden lg:block pt-14 bg-zinc-50 box-border px-4;
+  @apply fixed left-0 top-14 pt-4 w-1/5 h-[100vh] overflow-y-auto hidden lg:block bg-slate-50 box-border;
+}
+.sidebar-content {
+  @apply flex flex-col justify-between;
 }
 .note-item {
-  @apply w-full p-2 rounded-lg border border-slate-200 flex flex-row justify-between bg-white shadow-sm;
+  @apply w-full p-2 mt-1 flex flex-row justify-between text-gray-600 hover:bg-gray-200 bg-slate-50 px-6;
 }
 .main {
   @apply w-full lg:w-4/5;
